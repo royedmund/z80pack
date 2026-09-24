@@ -6,6 +6,11 @@ if not exist "build\bondwellsim.exe" (
   pause
   exit /b 1
 )
+if exist "disks\DISK1_HFE.img" if exist "disks\DISK2_HFE.img" (
+  "build\bondwellsim.exe" --disk-a "disks\DISK1_HFE.img" --disk-b "disks\DISK2_HFE.img"
+  if errorlevel 1 pause
+  exit /b
+)
 if not exist "disks\SYSTEM1.img" (
   echo Put a raw Bondwell system disk at disks\SYSTEM1.img.
   echo Use tools\copyqm2raw.py to convert CopyQM files.

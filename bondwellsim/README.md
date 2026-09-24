@@ -50,6 +50,22 @@ This was necessary for the local `SYSTEM1_RAW.img`, which actually held a valid
 368974-byte CopyQM stream padded to 737280 bytes with F6. Its data CRC is
 `70ac5d9d`. The original file is never modified.
 
+## HFE archive images
+
+HFE v1 images from the local Bondwell archive can also be converted:
+
+```powershell
+python bondwellsim/tools/hfe2raw.py "G:\Bondwell 14\bw14dsks\IMAGES\DISK1_TD0.hfe" bondwellsim/disks/DISK1_HFE.img
+python bondwellsim/tools/hfe2raw.py "G:\Bondwell 14\bw14dsks\IMAGES\DISK2_TD0.hfe" bondwellsim/disks/DISK2_HFE.img
+```
+
+Every sector ID and data CRC is checked before writing the new image. The
+original HFE is unchanged. HFE v3, deleted-data sectors, CRC errors and
+nonstandard geometries are rejected rather than silently losing information.
+The Windows launcher prefers this pair when both converted images exist.
+Both supplied disks passed all 1440 sector checks; DISK1 boots CP/M 3 and DISK2
+lists its assembler/linker and system-building utilities through `DIR B:`.
+
 ## Run
 
 On Windows you can double-click **Launch Bondwell.cmd** after building and

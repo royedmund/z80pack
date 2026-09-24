@@ -34,6 +34,6 @@ target_link_libraries(bondwell_tests PRIVATE bondwell)
 add_test(NAME machine COMMAND bondwell_tests)
 find_package(Python3 COMPONENTS Interpreter QUIET)
 if(Python3_FOUND)
-    add_test(NAME copyqm COMMAND ${Python3_EXECUTABLE} -m unittest discover
-        -s ${CMAKE_CURRENT_SOURCE_DIR}/tests -p test_copyqm.py)
+    add_test(NAME disk_converters COMMAND ${Python3_EXECUTABLE} -m unittest discover
+        -s ${CMAKE_CURRENT_SOURCE_DIR}/tests -p "test_*.py")
 endif()

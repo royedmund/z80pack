@@ -15,6 +15,9 @@ dev CPU sources. The Windows executable uses only Windows system DLLs.
 * Guest writes: PIP created TEST.TXT on B: and saved to a separate .updated
   image; remounting it and TYPE B:TEST.TXT returned HELLO. The original
   SYSTEM1 file was unchanged.
+* HFE archive pair: DISK1_TD0.hfe boots CP/M 3; DIR B: reads the actual
+  DISK2_TD0.hfe, including MAC, RMAC, LINK, GENCPM and BIOS sources.
+  All 2880 sector ID/data CRC pairs verified during conversion.
 * The display is rendered from actual video RAM and CHAROM, not synthesized
   terminal text. Exported frame was visually inspected.
 
@@ -27,7 +30,8 @@ CTest runs machine-level C tests (bank isolation, read-triggered LS259 changes,
 ROM protection, Model 12 absent banks, real Z80 relocation and port execution,
 FDC read/write/protection/invalid units, keyboard serial order/queue, SIO A/B file transfers and TX timing, PIT latching,
   and glyph pixels)
-and Python CopyQM corruption/truncation/CRC/padding tests. These are asset-free.
+and Python CopyQM corruption/truncation/CRC/padding tests, plus HFE sector-order,
+circular-track, CRC, deleted-mark and container-boundary tests. These are asset-free.
 
 ## Limits
 

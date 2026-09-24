@@ -33,3 +33,20 @@ The converter deliberately supports only complete standard Bondwell images;
 it rejects partial cylinders, bad checksums, unsupported geometry, truncated
 runs, over-expansion and unexpected trailing bytes. It does not silently
 reinterpret arbitrary 360 KB PC media as Bondwell disks.
+
+## HFE v1
+
+`tools/hfe2raw.py` accepts revision-0 HXCPICFE containers containing 40-cylinder,
+250 kbit/s IBM-MFM tracks. It deinterleaves the heads in 256-byte chunks, reads
+HFE bits least-significant-first, locates missing-clock A1 sync words, verifies
+CRC-CCITT for ID and normal data fields, and writes sectors in ID order.
+Circular tracks can contain fields crossing index. Missing sectors, conflicting
+sector duplicates, unsupported/deleted sectors, overlapping/truncated ranges,
+and CRC failures are errors. Conversion does not preserve flux timing.
+
+Layout reference: [MAME hxchfe_dsk.cpp](https://github.com/mamedev/mame/blob/master/src/lib/formats/hxchfe_dsk.cpp).
+
+| Supplied HFE | Raw SHA-256 | Verified sectors |
+| --- | --- | --- |
+| DISK1_TD0.hfe | 7dd156c7ae853bf3472746c9dfe6f671aa7577577ea7070ed3bec2fc106fae55 | 1440 |
+| DISK2_TD0.hfe | 57d9387ffe490e7a8b78bd56aab32e9ff71092a8fef7e7acbd2d861b2bb62217 | 1440 |
