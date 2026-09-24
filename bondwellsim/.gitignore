@@ -1,0 +1,16 @@
+build/
+bondwellsim
+bondwellsim.exe
+roms/*.BIN
+roms/*.bin
+disks/*.img
+disks/*.IMG
+disks/*.dsk
+disks/*.cqm
+*.log
+*.pbm
+*.ppm
+__pycache__/
+
+*.updated
+release/

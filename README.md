@@ -1,3 +1,11 @@
+## Bondwell 12/14 fork
+
+This fork adds [bondwellsim](bondwellsim/README.md), a bootable Bondwell 12/14
+machine using the existing z80pack Z80 core. Model 14 boots the original CP/M 3
+system disk; native Windows and optional SDL2 displays render the real character
+ROM. Build with `make bondwell` or CMake; see the machine README for ROMs, disks,
+launch instructions, tests, and current peripheral limitations.
+
 # z80pack
 
 z80pack is a mature emulator of multiple platforms with 8080 and Z80 CPU.
