@@ -29,9 +29,10 @@ and the common CPU sources are unchanged.
 
 ## ROMs and disks
 
-Supply 4096-byte `bondwellsim/roms/BOOTROM.BIN` and `CHAROM.BIN`.
-See [ROM provenance](roms/README.md). ROMs and CP/M disks are intentionally not
-tracked in Git. Both are required, including in headless mode.
+The boot and character ROMs, validated raw CP/M disks, and original HFE disk
+images are included. See [ROM provenance](roms/README.md),
+[disk contents](disks/README.md), and [SHA-256 checksums](media-sha256.json).
+A fresh checkout has the media needed by the Windows launcher.
 
 Native disk geometry is **40 cylinders, 18 sectors of 256 bytes, IDs 0–17**,
 with one head (Model 12, 184320 bytes) or two (Model 14, 368640 bytes).
@@ -52,7 +53,8 @@ This was necessary for the local `SYSTEM1_RAW.img`, which actually held a valid
 
 ## HFE archive images
 
-HFE v1 images from the local Bondwell archive can also be converted:
+The original HFE v1 archive images are included under `disks/source/`; their
+converted images are already provided. To convert another copy:
 
 ```powershell
 python bondwellsim/tools/hfe2raw.py "G:\Bondwell 14\bw14dsks\IMAGES\DISK1_TD0.hfe" bondwellsim/disks/DISK1_HFE.img
@@ -68,8 +70,7 @@ lists its assembler/linker and system-building utilities through `DIR B:`.
 
 ## Run
 
-On Windows you can double-click **Launch Bondwell.cmd** after building and
-placing the ROMs/disks. Or run from `bondwellsim` so the default ROM paths resolve:
+On Windows you can double-click **Launch Bondwell.cmd** after building. Or run from `bondwellsim` so the default ROM paths resolve:
 
 ```powershell
 cd bondwellsim

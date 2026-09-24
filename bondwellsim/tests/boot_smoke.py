@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Opt-in integration test using user-supplied Bondwell ROMs and SYSTEM1.
 
-No ROM or operating-system data is included in this repository.
+Reference ROMs and SYSTEM1 are included under roms/ and disks/.
 """
 import argparse
 from pathlib import Path

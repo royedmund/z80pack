@@ -1,6 +1,6 @@
-# User-supplied ROMs
+# Included ROMs
 
-Place these exact 4096-byte files here:
+The repository includes these 4096-byte ROM dumps:
 
 | File | SHA-1 |
 | --- | --- |
@@ -10,5 +10,5 @@ Place these exact 4096-byte files here:
 The user's existing [Bondwell repository](https://github.com/royedmund/Bondwell-12-14-PCGET-and-PCPUT)
 contains these dumps. They match the boot and character ROM identities in
 [MAME's Bondwell driver](https://github.com/mamedev/mame/blob/master/src/mame/bondwell/bw12.cpp).
-They were downloaded for local testing but are excluded from commits and CI.
+These dumps are included at the repository owner's request.
 An alternate 4096-byte character ROM can be selected with `--chargen`.
