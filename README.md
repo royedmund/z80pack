@@ -1,4 +1,32 @@
-# z80pack
+# z80pack — Roy Antaw’s fork
+
+## About this fork and repository navigation
+
+This is Roy Antaw's fork of [udo-munk/z80pack](https://github.com/udo-munk/z80pack). Original authorship, licensing and emulator layout are retained. The guide below describes this snapshot. The upstream `dev` branch is a separate development line; its existence in this fork is not assumed.
+
+To build this checkout, clone the fork and then use the X11 or SDL2 build instructions below:
+
+```bash
+git clone https://github.com/royedmund/z80pack.git
+cd z80pack
+```
+
+| Location | Purpose |
+| --- | --- |
+| [z80core/](z80core/) / [iodevices/](iodevices/) | Shared CPU and device implementation |
+| [cpmsim/](cpmsim/) / [z80sim/](z80sim/) | CP/M and general Z80 simulator files |
+| `altairsim/`, `imsaisim/`, `cromemcosim/`, `intelmdssim/`, `mosteksim/` | Machine-specific simulators and assets |
+| [frontpanel/](frontpanel/) / [webfrontend/](webfrontend/) | Front-panel and web interfaces |
+| [z80asm/](z80asm/) / [cpmtools/](cpmtools/) | Supporting tools |
+| [picosim/](picosim/) | Pico target and bundled dependencies; a separate embedded workflow |
+| [doc/](doc/) / [HISTORY](HISTORY) | Documentation and project history |
+| [LICENSE](LICENSE) | Project licence |
+
+The root Makefile delegates to machine directories, so moving them requires coordinated build changes. The Pico dependency tree contains upstream documents that refer to files not bundled in this snapshot; those embedded third-party references are not host-build instructions. Preserve their licence texts and consult their upstream projects when working on the Pico target.
+
+---
+
+## Original project guide
 
 z80pack is a mature emulator of multiple platforms with 8080 and Z80 CPU.
 
