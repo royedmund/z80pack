@@ -1,4 +1,7 @@
-# am9511
+# AM9511 emulator
+
+[Back to the z80pack guide](../../README.md). The historical notes below describe the wider AM9511 project. This bundled directory contains `am9511`, `floatcnv`, `ova` and type source/header files plus a licence. Referenced files such as `howto.txt`, `AM9511.BAS`, `getopt.c` and the test executables are not supplied in this checkout.
+
 AM9511 floating point chip emulator. Includes a library to allow conversion of 32 bit floating point formats. AM9511,
 Microsoft, IEEE, Hi-Tech C formats are supported.
 
